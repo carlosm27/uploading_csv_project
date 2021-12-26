@@ -1,0 +1,21 @@
+{% extends 'upload_csv/base.html' %}
+
+{% block content %}
+<div class="header-bar">
+    <h3>{{file}}</h3>
+</div>
+
+<div id="expenses-add-wrapper">
+    <a id="add-link" href="{% url 'form' %}">&#x2b;</a>
+</div>
+
+<body>
+
+    <div class="table">{{df|safe}}</div>
+
+
+
+</body>
+
+
+{% endblock content %}

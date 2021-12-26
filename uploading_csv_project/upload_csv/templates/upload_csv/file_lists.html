@@ -1,0 +1,26 @@
+{% extends 'upload_csv/base.html' %}
+
+{% block content %}
+<header class="header-bar">
+    <h3>List of files</h3>
+</header>
+
+<body>
+    <div class = "file-items-wrapper">
+         <form class = "card-body" method="GET" >
+        {% for file in files %}
+         <li class ="item-row" ><a id = {{file}} href="/dataframe/{{file}}"><input
+                 name = "{{file}}"
+                value="{{file}}"
+                class="btn btn-danger btn-sm"
+                type="button"
+            /></a></li>
+         <a class="delete-link" href="{% url 'file_deleted' file %}">&#215;</a>
+        {% endfor %}
+        <p><a href="{% url 'form' %}">Return to form</a></p>
+         </form>
+    </div>
+
+</body>
+
+{% endblock content %}
